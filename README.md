@@ -70,29 +70,6 @@ Tests unitaires & d’intégration (routes produits) via Jest & Supertest
 
 mongodb-memory-server démarre une base in-memory (aucune dépendance à une DB locale)
 
-📁 Structure (simplifiée)
-.
-├─ server.ts # bootstrap Express, middlewares, routes
-├─ routes.ts # montage des routers
-├─ src/
-│ ├─ config/
-│ │ └─ db.ts # connexion Mongo + gestion erreurs
-│ ├─ controllers/
-│ │ ├─ user.controller.ts
-│ │ └─ product.controller.ts
-│ ├─ middlewares/
-│ │ └─ auth.middleware.ts # requireAuth (JWT en cookie)
-│ ├─ models/
-│ │ ├─ user.model.ts
-│ │ └─ product.model.ts
-│ ├─ routes/
-│ │ ├─ user.routes.ts
-│ │ └─ product.routes.ts
-│ └─ validators/
-│ ├─ user.validator.ts
-│ └─ product.validator.ts
-└─ tests/ # jest + supertest + db in-memory
-
 🔐 Authentification
 
 À la connexion/inscription, le serveur émet un cookie jwt HttpOnly, sameSite=strict, secure en prod.
