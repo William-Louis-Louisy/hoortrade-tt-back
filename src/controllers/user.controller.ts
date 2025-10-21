@@ -47,7 +47,7 @@ export const userController = {
 
       res.cookie("jwt", token, {
         httpOnly: true,
-        sameSite: "strict",
+        sameSite: "none",
         secure: process.env.NODE_ENV === "production",
         maxAge: maxAge * 1000,
       });
@@ -145,7 +145,7 @@ export const userController = {
 
       res.cookie("jwt", token, {
         httpOnly: true,
-        sameSite: "strict",
+        sameSite: "none",
         secure: process.env.NODE_ENV === "production",
         maxAge: maxAge * 1000,
       });
@@ -166,7 +166,7 @@ export const userController = {
   logout: function (req: Request, res: Response) {
     res.clearCookie("jwt", {
       httpOnly: true,
-      sameSite: "strict",
+      sameSite: "none",
       secure: process.env.NODE_ENV === "production",
     });
     res.status(200).json({ message: "User logged out" });
